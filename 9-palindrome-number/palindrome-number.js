@@ -2,15 +2,15 @@
  * @param {number} x
  * @return {boolean}
  */
-var isPalindrome = function(x) {
-    if(x < 0) return false;
-    let rev = 0, num = x;
+var isPalindrome = function (x) {
+    if (x < 0) return false;
+    let num = x, rev = 0;
 
-    while(num > 0){
-        const digit = num%10;
-        rev = (rev*10) + digit;
-        num = Math.floor(num/10);
+    while (num > 0) {
+        let lastDigit = num % 10;
+        rev = rev * 10 + lastDigit;
+        num = Math.floor(num / 10);
     }
 
-    return rev == x;
+    return x == rev;
 };
